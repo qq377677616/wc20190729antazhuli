@@ -1,0 +1,488 @@
+/**index.wxss**/
+view{
+    box-sizing: border-box;
+}
+.container{
+     width: 100%;
+     height: 3300rpx;
+     background-size: 100%; 
+     box-sizing: border-box;
+     overflow-x:hidden; 
+}
+.helpBox{
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     top: 750rpx;
+     width: 635rpx;
+     height: 300rpx;
+     /* background-color: seagreen; */
+     z-index: 99;
+     background-image: url("https://game.flyh5.cn/resources/game/wechat/file/anta/My_img.png");
+     /* page1_62.png */
+     background-size: 100%;
+}
+.helpBox2{
+      position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     top: 750rpx;
+     width: 635rpx;
+     height: 300rpx;
+     /* background-color: seagreen; */
+     z-index: 99;
+     background-image: url("https://game.flyh5.cn/resources/game/wechat/file/anta/Ta_img.png");
+     /* page1_62.png */
+     background-size: 100%;
+}
+.bothBox{
+     width: 100%;
+     height: 100%;
+     position: relative;
+     /* background-image: url("My_img.png") */
+}
+.invitation{
+     width: 265rpx;
+     height: auto;
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: 20rpx;
+}
+.helpBox2 .invitation{
+     display: none;
+}
+.helpBox .zhuli1,.helpBox .zhuli2{
+      display: none;
+}
+.zhuli1,.zhuli2{
+      width: 267rpx !important;
+      height: auto;
+      position: absolute;
+      left: 37rpx;
+      top: 190rpx; 
+      z-index: 99;
+}
+.zhuli2{
+      left: 318rpx;
+}
+.zouma{
+     position: absolute;
+     right: 0;
+     top: 38rpx;
+     z-index: 999;
+     background: url("https://game.flyh5.cn/resources/game/wechat/file/anta/at2_2.png") no-repeat left center;
+     background-size: 565rpx;
+     width: 500rpx;
+     height: 48rpx;
+}
+.body{overflow-x: hidden;}
+.zouma swiper{
+    height: 100%;
+}
+.item_txt{
+    padding-left: 143rpx;
+    color: white;
+    font-size: 25rpx;
+    line-height: 48rpx;
+}
+.it_num{
+    position: absolute;
+    left: 200rpx;
+    top: 40rpx;
+    color: white;
+    width: 70rpx;
+    height: 45rpx;
+    text-align: center;
+}
+.invitNum{
+    position: absolute;
+    top: 1835rpx;
+    left: 268rpx;
+    width: 110rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    color: #5e1c1b;
+}
+.rewordBox{
+   position: absolute;
+   left: 50%;
+   top:1912rpx;
+   width:620rpx;
+   transform: translateX(-50%);
+   height: 636rpx;
+   /* background-color: red; */
+   z-index: 999;
+}
+.rewordBox  scroll-view{
+   height: 100%;
+   width: 100%;
+}
+.reword{
+  width: 100%;
+  height: 172rpx;
+  /* background-color: seagreen;s */
+  padding: 16rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.reword view:nth-child(1){
+  width: 394rpx;
+  height: 100%;  
+}
+.reword view:nth-child(1)  image{
+   width: 156rpx;
+   float: left;
+   height: auto;
+}
+.rewordTitle,.rewordNum,.rewordVal{
+    font-size: 26rpx;
+    font-weight:600;
+    display: block; 
+    padding-left: 18rpx;
+    padding-top: 22rpx;
+    float: left;
+    width: 200rpx;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.rewordNum,.rewordVal{
+    font-weight: 100;
+    line-height: 35rpx;
+    font-size: 22rpx;
+    padding-top: 0;
+}
+.reword view:nth-child(2){
+   flex: 1;
+} 
+.emBtn{
+    width: 177rpx;
+    height: 52rpx;
+    display: block;
+    line-height: 52rpx;
+    text-align: center;
+    font-size: 24rpx;
+    background-color: #7a7979;
+    border-radius: 30rpx;
+    color: white;
+}
+.reNun{
+    font-size: 22rpx;
+    padding-left: 26rpx;
+}
+.able{
+     background-color: #ffa909;
+}
+::-webkit-scrollbar{
+     background-color: #ffe7ba;
+     width: 20rpx;
+     border-radius: 20rpx;
+}
+::-webkit-scrollbar-thumb
+{
+border-radius: 20px;
+background-color: #ffa909;
+}
+.zhanwei{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.notouch{
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ z-index: 9999;
+ opacity: 0;
+}
+.sq_pop{
+   background-color: white;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 9999;
+    background-image: url("https://game.flyh5.cn/resources/game/wechat/file/anta/loading.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.progreess{
+  width: 504rpx;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  height: 48rpx;
+  /* text-align: center; */
+}
+.percent{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%; 
+}
+.shouquan{
+      position: absolute;
+}
+.sq_btn{
+     position: absolute;
+     left: 50%;
+     width: 319rpx;
+     height: auto;
+     bottom: 265rpx; 
+     transform: translateX(-50%);  
+}
+.sacls {
+      animation: sale 1s infinite;
+}
+.pro{
+    width: 518rpx;
+    height: 56rpx;
+    background-size: 100% 100%;
+    animation: pros 5s normal;
+}
+@keyframes sale{
+        0%{
+             transform:  translateX(-50%)scale(1);
+              /* transform: translateX(-50%) */
+        }
+        50%{
+          transform:  translateX(-50%)scale(1.3);
+           /* transform: translateX(-50%) */
+        }
+        100%{
+           transform:  translateX(-50%)scale(1);
+           /* transform: translateX(-50%) */
+        }
+}
+@keyframes pros{
+       0%{
+            width: 0rpx;
+            left: 127rpx;
+            /* transform: translateX(0%); */
+       }
+       100%{
+           width: 518rpx;
+           left: 50%;
+           /* transform: translateX(-50%); */
+       }
+}
+.op{
+      opacity: 0;
+}
+.show{
+         display: block;
+}
+.hide{
+         display: none  
+}
+.del{
+        width: 544rpx;
+        position: fixed;
+        top: 287rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+}
+.huafeibox{
+        width: 564rpx;
+}
+.mb_box{
+       width: 100%;
+       height: 100%;
+       position: fixed;
+       left: 0;
+       top: 0;
+       background-color: rgba(0, 0,0,0.5);
+       z-index: 999;
+}
+
+.ipt1,.ipt2,.ipt3,.ipt4{
+      position: absolute;
+      z-index: 999; 
+      height: 63rpx;
+      width:324rpx;
+      border-radius: 10rpx;
+      text-indent: 10rpx;
+       left: 282rpx;
+       font-size: 24rpx;
+       background-color: #CECECE;
+       box-sizing: border-box;
+       display: block;
+       padding-left: 10rpx;
+       overflow: hidden;
+}
+.ipt1{
+       top: 440rpx;
+}
+.ipt2{
+       top: 520rpx;
+}
+.ipt3{
+       top: 600rpx;
+       height: 103rpx;
+}
+.ipt4{
+       top: 720rpx;
+}
+.huafei1,.huafei2{
+       left: 320rpx;
+}
+.huafei1{
+        top: 460rpx;
+}
+.huafei2{
+        top: 590rpx;
+}
+.ipt-class{
+     text-align: center;
+     color: white;
+}
+.closeBtn{
+     position: absolute;
+     left: 592rpx;
+     top: 22%;
+     z-index: 999;
+     width: 70rpx;
+     height: auto;
+}
+.filishBtn{
+    width: 226rpx;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 68%;
+    z-index: 999;
+}
+.firstPop{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0,0,0.5);
+    z-index: 999;
+}
+.firstImg{
+     position: fixed;
+    width: 546rpx;
+    height: auto;
+    top: 288rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+.newClose{
+    position: fixed;
+    width: 70rpx;
+    height: auto;
+    right:86rpx;
+    top: 270rpx;
+    z-index: 999; 
+}
+.getNew{
+    width: 264rpx;
+    height: auto;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 792rpx;
+    z-index: 999;
+}
+.forWord{
+    z-index: 100;
+    height: 68rpx;
+    border-radius: 40rpx;
+    opacity: 0;
+}
+.showman{
+    position: absolute;
+    width: 100%;
+    height: 75rpx;
+    top: 100rpx;
+    left: 0;
+    padding: 0rpx  54rpx;
+    box-sizing: border-box;
+}
+
+.showman image{
+     width: 78rpx;
+     height: auto;
+     margin-left: 17rpx;
+     border-radius: 50%;
+}
+.showman image:nth-child(1){
+     margin: 0;      
+}
+.showman .sandian{
+      width: 54rpx;
+      transform: translateY(-30rpx);
+       border-radius: 0;
+}
+.zhilivalue{
+    width: 589rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1245rpx;
+}
+.jika{
+    position: fixed;
+    width: 340rpx;
+    height: 124rpx !important;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 440rpx; 
+    z-index: 999;
+}
+.zhouka{
+   position: fixed;
+    width: 340rpx;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 440rpx; 
+    z-index: 999;
+}
+.aiqiyi{
+   position: fixed;
+   left: 50%;
+   transform: translateX(-50%);
+   top: 571rpx;
+   z-index: 999;
+   color: #606060;
+   font-size: 26rpx;
+}
+.Noactive{
+    position: fixed;
+    width: 544rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.banalLink{
+   position: absolute;
+   left: 0;
+   top: 144rpx;
+   width: 100%;
+   height: 590rpx;
+   background-color: red;
+   z-index: 999;
+   opacity: 0;
+}
+.swiper{
+   position: absolute;
+   width: 624rpx;
+   top: 1084rpx;
+   /* height: auto; */
+   left: 50%;
+   transform: translate(-50%);
+   z-index: 99;
+   /* background-color: red;   */
+}
+.swiper swiper{
+  height: 430rpx;
+}
+.swiper image{
+   width: 100%;
+   height: auto;
+}

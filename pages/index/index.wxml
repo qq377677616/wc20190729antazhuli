@@ -1,0 +1,137 @@
+<view class="body">  
+            <!-- <view class="banalLink" bindtap="linkGame"></view> -->
+            <!-- {{isNew?"show":"hide"}} -->
+            <view class='firstPop {{isNew?"show":"hide"}}'  style='width:100%;height:{{w_height}}px' >
+                   <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page2_16.png" class='firstImg'>
+                   </image>
+                   <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page2_17.png" class='newClose' bindtap='closeNew'></image>
+                   <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page2_18.png" class='getNew' bindtap='getCoupons'></image>
+            </view>
+           <view class='sq_pop {{isShow?"hide":"show"}}' style='width:100%;height:{{w_height}}px'> 
+                <!-- <progress percent="100"   active  class='progreess' activeColor="#199ED8"  stroke-width="20" border-radius="20"/> -->
+                <image mode='widthFix' src='https://game.flyh5.cn/resources/game/wechat/file/anta/bg_pro.png' class='progreess'></image>
+                <!-- <image  src='https://game.flyh5.cn/resources/game/wechat/file/anta/pro.png'></image> -->
+                <view  class='progreess pro' style='background-image: url(https://game.flyh5.cn/resources/game/wechat/file/anta/pro.png)'></view>
+                <text class='percent'>{{times}}%</text>
+                <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/shouquan.png" class='sq_btn  sacls {{isLogin?"show":"hide"}}'></image>
+               <button open-type="getUserInfo" bindgetuserinfo='getUserInfo' class='sq_btn op {{isLogin?"show":"hide"}}'>去授权</button>
+           </view>
+            <view class="container" style='background-image: url(https://game.flyh5.cn/resources/game/wechat/file/anta/f_bananer.png)'>
+                
+      </view>
+
+       <view class='{{istong?"helpBox":"helpBox2"}}'>
+              <view class='bothBox'>
+                       <button open-type="share" class='invitation forWord'>转发</button>
+                       <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page3_5.png" class='invitation' bindtap='invit'></image>
+                       <text class='it_num'>{{firends}}</text>
+                       <view class='showman'>
+                           <image mode='widthFix' src='{{item.head_img}}' wx:for="{{groupList}}" wx:key="item"></image>
+                          <image mode='widthFix' src='https://game.flyh5.cn/resources/game/wechat/file/anta/at2_4.png' class='sandian {{firends>5?"show":"hide"}}'></image>
+                       </view>
+                        <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page3_1.png" class='zhuli1' bindtap='goZhuli'></image>
+                         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page3_2.png" class='zhuli2'  bindtap='selfPlay'></image>
+              </view>  
+       </view>
+       <view class="swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-dots="true" indicator-color="#5e1c1b" indicator-active-color="#fff">
+                <block wx:for="{{swiperList}}" wx:key="item">
+                  <swiper-item>
+                    <image src="{{item}}" class="slide-image" mode="widthFix" bindtap="linkGame" data-num="{{index}}"/>
+                  </swiper-item>
+                </block>
+        </swiper>
+       </view>
+        <view class='zouma'>
+               <view class='zhanwei'>
+               <view class='notouch'></view>
+               <swiper  autoplay="autoplay" interval="2000" duration="1000" vertical='true' easing-function="easeInCubic" circular="true">
+              <block wx:for="{{imgUrls}}"  wx:key="item">
+             <swiper-item>
+             <text class='item_txt'>{{item.info}}</text>
+            </swiper-item>
+  </block>
+</swiper>
+        </view>
+        </view>
+   <!-- <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/zhilivalue.png" class='zhilivalue'></image> -->
+    <!-- <view> -->
+      
+    <!-- </view> -->
+    <view class='invitNum'>
+            {{score}}
+    </view>   
+    <view class='rewordBox'> 
+             <scroll-view scroll-y>
+                  <!-- 奖品列表 -->
+
+                   <view class='reword' wx:for="{{prizeList}}" wx:key="item" wx:if="{{item.id != 16}}">
+                          <view>
+                                  <image mode="widthFix" src="{{item.img}}"></image>
+                                   <text class='rewordTitle'>{{item.name}}</text>
+                                   <text class='rewordNum'>剩余数量:{{item.num}}</text>
+                                   <text class='rewordVal'>所需助力值:{{item.reduceNum}}</text>
+                          </view>
+                          <view>
+                              <text class='emBtn' wx:if="{{item.id !=4&&item.status==2}}" style='background-color:#621684' bindtap='ydh' data-status='{{item.status}}' data-type='{{item.id}}'>已兑换</text>
+                              <text class='emBtn' wx:if="{{item.id !=4&&item.status==0&&item.num==0}}">已抢光</text>
+                              <text class='emBtn able ' wx:elif="{{item.id ==4||item.status==0&& item.reduceNum<=item.score }}" bindtap='dhReword' data-type='{{item.id}}' data-n="{{item.reduceNum}}" data-s="{{score}}">立即兑换</text>
+                               <text class='emBtn'  data-type='{{item.id}}' wx:elif="{{item.id !=4&&item.status==0&& item.reduceNum>item.score}}">积分不够</text>
+                              <text class='reNun'>已有{{item.jsNum}}人获取</text>
+                          </view>
+                   </view>
+                 
+            </scroll-view>
+    </view> 
+    <!-- 有尺寸的弹框 "-->
+    <view class='mb_box'  wx:if="{{s_type==5||s_type==6||s_type==7||s_type==8}}">
+         <image mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/file/anta/shiwu2.png" class='del'></image>
+         <input placeholder='请输入姓名' class='ipt1' placeholder-class='ipt-class' bindinput='check' data-type='name'></input>
+         <input placeholder='请输入手机号' class='ipt2' placeholder-class='ipt-class' bindinput='check' data-type='phone'></input>
+         <textarea placeholder='如道路、门牌号、小区、楼栋号、单元室等' class='ipt3' placeholder-class='ipt-class' bindinput='check' data-type='add'></textarea>
+         <input placeholder='填写尺寸' class='ipt4' placeholder-class='ipt-class' bindinput='check' data-type='size'></input>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/close.png" class='closeBtn' bindtap='closePop'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/filish.png" class='filishBtn' bindtap='addSize'></image>
+    </view>
+
+
+<!-- 没尺寸的弹框 -->
+ <view class='mb_box' wx:elif="{{s_type==9}}">
+         <image mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/file/anta/shiwu1.png" class='del'></image>
+         <input placeholder='请输入姓名' class='ipt1' placeholder-class='ipt-class' bindinput='check'  data-type='name1'></input>
+         <input placeholder='请输入手机号' class='ipt2' placeholder-class='ipt-class' bindinput='check' data-type='phone1'></input>
+         <textarea placeholder='如道路、门牌号、小区、楼栋号、单元室等' class='ipt3'  bindinput='check' data-type='add1'></textarea>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/close.png" class='closeBtn' bindtap='closePop'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/filish.png" class='filishBtn' bindtap='addNosize'></image>
+    </view>
+
+<!-- 话费弹框 -->
+ <view class='mb_box' wx:elif="{{s_type==1}}">
+         <image mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/file/anta/huafei.png" class='del huafeibox'></image>
+         <input placeholder='请输入手机号' class='ipt1 huafei1' placeholder-class='ipt-class' bindinput='check' data-type='phone3'></input>
+         <input placeholder='请再次输入' class='ipt2 huafei2' placeholder-class='ipt-class' bindinput='check'  data-type='phone4'></input>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/close.png" class='closeBtn' bindtap='closePop'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/filish.png" class='filishBtn' bindtap="huafei"></image>
+    </view>
+
+    <!-- 季卡 -->
+     <view class='mb_box'  wx:elif="{{s_type==3}}">
+         <image mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/file/anta/kami1.png" class='del'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/close.png" class='closeBtn' bindtap='closePop'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/copeBtn.png" class='filishBtn' bindtap='copy'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page_jika.png" class='jika'></image>
+         <text class='aiqiyi'>{{jkcode}}</text>
+    </view>
+    <!-- 周卡 -->
+     <view class='mb_box'  wx:elif="{{s_type==2}}">
+         <image mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/file/anta/kami1.png" class='del'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/close.png" class='closeBtn' bindtap='closePop'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/copeBtn.png" class='filishBtn' bindtap='copy'></image>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/zhouka.png" class='zhouka'></image>
+         <text class='aiqiyi'>{{zkcode}}</text>
+    </view>
+    <!-- 活动结束 -->
+     <view class='mb_box {{isEnd?"show":"hide"}}'  bindtap='closeEnd'>
+         <image mode='widthFix' src="https://game.flyh5.cn/resources/game/wechat/file/anta/page2_53.png" class='Noactive'></image>
+     </view>
+</view>
